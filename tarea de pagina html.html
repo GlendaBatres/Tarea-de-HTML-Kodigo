@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras de Control</title>
+    <style>
+        /* --- BLOQUE DE CÓDIGO CSS  --- */
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --accent-blue: #58a6ff;
+            --accent-purple: #bc8df7;
+            --text-main: #c9d1d9;
+            --text-dim: #8b949e;
+            --border: #30363d;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Desplazamiento suave entre vínculos */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* --- MENÚ DE NAVEGACIÓN (TABLA DE CONTENIDO) --- */
+        nav {
+            /* Se cambia de 'fixed' a 'relative' para que se ubique después del título */
+            position: relative; 
+            top: 0;
+            width: 100%;
+            background: rgba(22, 27, 34, 0.95);
+            border-bottom: 1px solid var(--border);
+            border-top: 1px solid var(--border); /* Añadido para cerrar el recuadro */
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            margin-top: 20px; /* Espacio respecto al título */
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-blue);
+        }
+
+        /* --- SECCIONES --- */
+        header {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1e293b, #0d1117);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--accent-purple);
+            padding-bottom: 10px;
+            color: var(--accent-purple);
+        }
+
+        /* Bloques de Código */
+        pre {
+            background: #000;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--accent-blue);
+        }
+
+        code {
+            color: #7ee787;
+            font-family: 'Consolas', monospace;
+        }
+
+        .keyword { color: #ff7b72; }
+        .function { color: #d2a8ff; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>INSTITUTO NACIONAL DE APOPA</h1>
+        <p style="color: var(--accent-purple); font-weight: bold;">ESTRUCTURAS DE CONTROL</p>
+        
+        <nav>
+            <div class="nav-container">
+                <a href="#if-else" class="nav-link">If/Else</a>
+                <a href="#switch" class="nav-link">Switch</a>
+                <a href="#for" class="nav-link">For</a>
+                <a href="#while" class="nav-link">While</a>
+                <a href="#do-while" class="nav-link">Do While</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section id="if-else">
+            <h2>Estructura IF / ELSE</h2>
+            <p>Se utiliza para tomar decisiones lógicas basadas en una condición verdadera o falsa.</p>
+            <pre><code><span class="keyword">if</span> (puntos >= 6) {
+    console.log(<span class="function">"Aprobado"</span>);
+} <span class="keyword">else</span> {
+    console.log(<span class="function">"Reprobado"</span>);
+}</code></pre>
+        </section>
+
+        <section id="switch">
+            <h2>Estructura SWITCH</h2>
+            <p>Ideal para múltiples condiciones basadas en un solo valor.</p>
+            <pre><code><span class="keyword">switch</span> (opcion) {
+    <span class="keyword">case</span> 1: <span class="function">abrirMenu()</span>; <span class="keyword">break</span>;
+    <span class="keyword">default</span>: <span class="function">salir()</span>;
+}</code></pre>
+        </section>
+
+        <section id="for">
+            <h2>Bucle FOR</h2>
+            <p>Se utiliza cuando sabemos exactamente cuántas veces queremos repetir una acción.</p>
+            <pre><code><span class="keyword">for</span> (<span class="keyword">let</span> i = 0; i < 10; i++) {
+    console.log(<span class="function">"Iteración número: "</span> + i);
+}</code></pre>
+        </section>
+
+        <section id="while">
+            <h2>Bucle WHILE</h2>
+            <p>Repite el código mientras una condición sea verdadera.</p>
+            <pre><code><span class="keyword">while</span> (energia > 0) {
+    <span class="function">trabajar()</span>;
+    energia--;
+}</code></pre>
+        </section>
+
+        <section id="do-while">
+            <h2>Bucle DO WHILE</h2>
+            <p>Garantiza que el código se ejecute <strong>al menos una vez</strong> antes de verificar la condición.</p>
+            <pre><code><span class="keyword">do</span> {
+    <span class="function">preguntarNombre()</span>;
+} <span class="keyword">while</span> (nombre == <span class="function">""</span>);</code></pre>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 - Especialidad Desarrollo de Software - 
+Ing. Oscar Cortez, Licda Glenda Batres, Licda Reyna E. Cruz
+    </footer>
+
+</body>
+</html>
