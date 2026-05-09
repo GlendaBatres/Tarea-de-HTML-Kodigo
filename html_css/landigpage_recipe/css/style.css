@@ -28,7 +28,22 @@ figure img{
 .title{
     margin: 1rem 0;
     font-style: italic;
+    &:hover{
+    color: #844631;
+     cursor: pointer;
 }
+&::before
+{
+    content: "🍽️🍳🍩";/* content: "🍽️"; es para agregar un icono antes del título */
+    margin-right: 0.5rem;/* margin-right: 0.5rem; es para agregar un espacio entre el icono y el título */
+}
+}
+
+/*.title:hover{
+    color: #844631;
+    cursor: pointer;/* cursor: pointer; es para cambiar el cursor a una mano cuando se pasa el mouse sobre el título */
+}/*
+
 
 .paragrahp{
     margin-bottom: 1rem;
@@ -71,6 +86,12 @@ body{
     line-height: 1.6;
 }
 
+/* alterando los elementos de la lista */
+ol li::marker{
+    color: #844631;
+    font-weight: bold;
+    
+}
 table{
     width: 100%;
     border-collapse: collapse;/* border-collapse: collapse; es para eliminar el espacio entre las celdas de la tabla */
